@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { YoutubePlayerComponent } from './youtube-player.component';
+import { ProductCreateComponent } from './product-create.component';
 
-describe('YoutubePlayerComponent', () => {
-  let component: YoutubePlayerComponent;
-  let fixture: ComponentFixture<YoutubePlayerComponent>;
+describe('ProductCreateComponent', () => {
+  let component: ProductCreateComponent;
+  let fixture: ComponentFixture<ProductCreateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ YoutubePlayerComponent ]
+      declarations: [ ProductCreateComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(YoutubePlayerComponent);
+    fixture = TestBed.createComponent(ProductCreateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
