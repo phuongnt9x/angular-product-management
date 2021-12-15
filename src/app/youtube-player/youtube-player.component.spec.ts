@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TimelinesComponent } from './timelines.component';
+import { YoutubePlayerComponent } from './youtube-player.component';
 
-describe('TimelinesComponent', () => {
-  let component: TimelinesComponent;
-  let fixture: ComponentFixture<TimelinesComponent>;
+describe('YoutubePlayerComponent', () => {
+  let component: YoutubePlayerComponent;
+  let fixture: ComponentFixture<YoutubePlayerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TimelinesComponent ]
+      declarations: [ YoutubePlayerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TimelinesComponent);
+    fixture = TestBed.createComponent(YoutubePlayerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
