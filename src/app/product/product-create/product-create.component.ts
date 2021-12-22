@@ -9,10 +9,10 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class ProductCreateComponent implements OnInit {
   productForm: FormGroup = new FormGroup({
-    id: new FormControl(),
-    name: new FormControl(),
-    price: new FormControl(),
-    description: new FormControl(),
+    id: new FormControl(""),
+    name: new FormControl(""),
+    price: new FormControl(""),
+    description: new FormControl(""),
   });
   constructor(private productService: ProductService) { }
 
