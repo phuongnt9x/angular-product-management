@@ -6,9 +6,17 @@
       <td><input class="input-group-text" type="text" formControlName="name"></td>
     </tr>
     <tr>
-      <td></td>
+      <td> <div
+        *ngIf="(
+              categoryForm.get('name')?.dirty ||
+              categoryForm.get('name')?.touched
+             ) &&
+             categoryForm.get('name')?.invalid"
+      >
+       Invalid
+      </div></td>
       <td>
-        <button>Tạo mới</button>
+        <button [disabled]="categoryForm.invalid">Tạo mới</button>
       </td>
     </tr>
   </table>

@@ -17,6 +17,12 @@
       <td>Mô tả về sản phẩm</td>
       <td><input type="text" formControlName="description"></td>
     </tr>
+    <td>Danh muc sản phẩm</td>
+    <td><select formControlName="category">
+      <option disabled>Chon danh muc san pham</option>
+      <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
+
+    </select></td>
     <tr>
       <td></td>
       <td><button>Cập nhật</button></td>

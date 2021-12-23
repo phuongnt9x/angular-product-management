@@ -6,6 +6,8 @@
     <td>Tên</td>
     <td>Giá</td>
     <td>Mô tả</td>
+    <td>Danh muc</td>
+    <td class="btn-light"><a [routerLink]="['/product/create']" >Tạo mới</a></td>
   </tr>
   </thead>
   <tbody class="table-active">
@@ -14,6 +16,9 @@
     <td>{{product.name}}</td>
     <td>{{product.price}}</td>
     <td>{{product.description}}</td>
+    <td>{{product.category.name}}</td>
+    <td><a [routerLink]="['/product/update',product.id]">Edit</a></td>
+    <td><a [routerLink]="['/product/delete',product.id]">Delete</a></td>
   </tr>
   </tbody>
 </table>

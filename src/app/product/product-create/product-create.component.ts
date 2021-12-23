@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../../service/product.service";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {CategoryService} from "../../service/category.service";
+import {Category} from "../../model/category";
 
 @Component({
   selector: 'app-product-create',
@@ -13,16 +15,28 @@ export class ProductCreateComponent implements OnInit {
     name: new FormControl(""),
     price: new FormControl(""),
     description: new FormControl(""),
-  });
-  constructor(private productService: ProductService) { }
+    category: new FormControl("")
+  },Validators.required);
+  categories: Category[]=[];
+  constructor(private productService: ProductService,private categoryService: CategoryService) { }
 
 
   ngOnInit(): void {
+    this.getAllCategory();
   }
   submit() {
     const product = this.productForm.value;
-    this.productService.saveProduct(product);
+    this.productService.saveProduct(product).subscribe(()=>{
+      alert("Tao thanh cong")
+    },error => {
+      console.log(error);
+    })
     this.productForm.reset();
+  }
+  getAllCategory(){
+  this.categoryService.getAll().subscribe(categories =>{
+    this.categories=categories;
+  })
   }
 
 }

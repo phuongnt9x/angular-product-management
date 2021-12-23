@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CategoryService} from '../../service/category.service';
 
 @Component({
@@ -9,7 +9,7 @@ import {CategoryService} from '../../service/category.service';
 })
 export class CategoryCreateComponent implements OnInit {
   categoryForm: FormGroup = new FormGroup({
-    name: new FormControl(""),
+    name: new FormControl("",[Validators.minLength(6),Validators.required]),
   });
 
   constructor(private categoryService: CategoryService) {
